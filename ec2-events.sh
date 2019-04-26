@@ -5,7 +5,7 @@ if [ -z "${PUSHGATEWAY_URL}" ]; then
   exit 1
 else
   INSTANCE="$(curl -fsS -m 5 http://169.254.169.254/latest/meta-data/public-hostname || hostname -f)"
-  PUSHGATEWAY_URL="${PUSHGATEWAY_URL}/metrics/job/ec2_events/instance/${INSTANCE}/"
+  PUSHGATEWAY_URL="${PUSHGATEWAY_URL}/metrics/job/ec2_events/instance/${INSTANCE}"
 fi
 
 echo "Checking for scheduled maintenance events."
